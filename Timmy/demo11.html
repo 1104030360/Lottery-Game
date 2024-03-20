@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is the title</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <div><!--第一題-->
+        <h1 id="ocean">樂透遊戲</h1>
+        <p>遊戲規則：使用者可自行輸入 3 個號碼 (範圍是數字 1~10)；<br>每次開始遊戲時會亂數產生 3 個得獎號碼 (範圍是數字 1~10 不重複)；<br>當使用者輸入 3 個號碼並按下開獎按鈕後，會開始比對輸入的號碼及得獎號碼 (不管排列先後順序)，<br>全部對中時為頭獎、2 個號碼對中為貳獎、1 個號碼對中為參獎</p>
+        <label>請輸入三個號碼</label>
+        <input type="number" id="first" value="">
+        <input type="number" id="second" value="">
+        <input type="number" id="third" value="">
+        <button id="btn" onclick="myFunction()">開獎</button>
+        <button id="resetbtn" onclick="restart()">Reset</button><!--第四題-->
+        <p id="demo"></p>
+    </div>
+    <script>
+        const luckynum1 = Math.floor(Math.random() * 10) + 1;
+        const luckynum2 = Math.floor(Math.random() * 10) + 1;
+        const luckynum3 = Math.floor(Math.random() * 10) + 1;
+        
+        if (luckynum1 != luckynum2 && luckynum1 != luckynum3 && luckynum2 != luckynum3) 
+        {
+            function myFunction() 
+            {
+                let input1 = document.getElementById("first").value;
+                let input2 = document.getElementById("second").value;
+                let input3 = document.getElementById("third").value;
+                var counter = 0;
+                if(input1==input2||input1==input3||input2==input3)
+                {alert('請看清楚規則');//第五題
+                generateLuckyNumbers();
+                }
+                else{  
+                    if(input1>0&&input2>0&&input3>0)
+                    {              
+                        if (input1 == luckynum1)
+                            counter++;
+                        if (input1 == luckynum2)
+                            counter++;
+                        if (input1 == luckynum3)
+                            counter++;
+                        if (input2 == luckynum1)
+                            counter++;
+                        if (input2 == luckynum2)
+                            counter++;
+                        if (input2 == luckynum3)
+                            counter++;
+                        if (input3 == luckynum1)
+                            counter++;
+                        if (input3 == luckynum2)
+                            counter++;
+                        if (input3 == luckynum3)
+                            counter++;
+                        /*第二題*/if(counter==0){
+                            text='啥都沒中'
+                        }
+                        if (counter == 1) {
+                            text = '恭喜中獎！！您中的獎是參獎10元';
+                        } else if (counter == 2) {
+                            text = '恭喜中獎！！您中的獎是貳獎100元';
+                        } else if (counter == 3) {
+                            text = '恭喜中獎！！您中的獎是頭獎1000元';
+                        }
+                    }
+                    else
+                    {
+                        alert('輸入錯誤');
+                        generateLuckyNumbers();//第五題
+                    }
+                }
+                    
+                document.getElementById("demo").innerHTML = text;
+                }
+            }
+    
+            generateLuckyNumbers();
+        
+    
+    function restart() {
+        document.getElementById("first").value = "";
+        document.getElementById("second").value = "";
+        document.getElementById("third").value = "";
+        document.getElementById("demo").innerHTML = "";
+        generateLuckyNumbers();}
+    
+    </script>
+</body>
+</html>

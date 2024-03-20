@@ -1,0 +1,42 @@
+/*以下是第三題*/
+#ocean {
+    height: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    text-shadow: 3px 3px 6px #000000;
+    background-image: linear-gradient(to right ,rgba(30,144,255,0.5),rgba(0,0,255,0.9));
+}
+
+#first{    width: 120px;
+    margin-bottom: 40px;
+    background-color: #dfffdf;
+    color: gray;
+}
+#second{    width: 120px;
+    margin-bottom: 40px;
+    background-color: #dfffdf;
+    color: gray;
+}
+#third{    width: 120px;
+    margin-bottom: 40px;
+    background-color: #dfffdf;
+    color: gray;
+}
+#btn{
+    width: 80px;
+    margin-left: 10px;
+    background-color: #000000;
+    color: yellow;
+}
+#btn:hover{
+    width: 80px;
+    height: 40px;
+
+}
+body{
+    background-image: url(財神爺-14.jpg);
+    background: size 50px;;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
